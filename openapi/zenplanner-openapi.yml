@@ -1,0 +1,178 @@
+openapi: 3.0.3
+info:
+  title: Zen Planner API
+  version: v1
+  description: >-
+    Modeled OpenAPI description of the Zen Planner API, published on the Daxko
+    Partners platform. Zen Planner is gym, martial arts, and fitness studio
+    management software owned by Daxko. The live API is partner-gated - access is
+    requested through a Daxko sales representative - but the API reference is
+    publicly documented at https://docs.partners.daxko.com/openapi/ZenPlanner/v1/.
+
+
+    endpointsModeled: true. The paths below are induced from the public Daxko
+    Partners Zen Planner reference. The Classes paths (/classes,
+    /classes/people/{personId}/reservations, /classes/people/{personId}/attendances)
+    are confirmed from the published documentation; the remaining list/create
+    operations for People, Memberships, Locations, Programs, Prospects, and Groups
+    are honestly modeled from the documented module set and may differ in exact
+    path, parameters, and payloads from the gated production surface.
+  contact:
+    name: Daxko Partners
+    url: https://docs.partners.daxko.com/
+servers:
+- url: https://api.partners.daxko.com/api/v1
+  description: Daxko Partners production base URL for the Zen Planner API
+security:
+- oauth2: []
+paths:
+  /people:
+    get:
+      operationId: listPeople
+      summary: Retrieve people
+      description: Retrieve a page of people (members and contacts) for the account.
+      tags:
+      - People
+      responses:
+        '200':
+          description: A page of people.
+  /people/{personId}:
+    get:
+      operationId: getPerson
+      summary: Retrieve a person
+      description: Retrieve a single person by id.
+      tags:
+      - People
+      parameters:
+      - name: personId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A person record.
+  /people/{personId}/memberships:
+    get:
+      operationId: listPersonMemberships
+      summary: Retrieve memberships for a person
+      description: Retrieve the list of memberships held by a person.
+      tags:
+      - Memberships
+      parameters:
+      - name: personId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A list of memberships for the person.
+  /classes:
+    get:
+      operationId: listClasses
+      summary: Retrieve classes
+      description: >-
+        Retrieve class information including schedules and details about class
+        types. Confirmed endpoint from the public Zen Planner reference.
+      tags:
+      - Classes
+      responses:
+        '200':
+          description: A list of classes.
+  /classes/people/{personId}/reservations:
+    get:
+      operationId: listPersonReservations
+      summary: Retrieve a person's class reservations
+      description: >-
+        Retrieve the list of reserved classes for a person. Confirmed endpoint
+        from the public Zen Planner reference.
+      tags:
+      - Classes
+      parameters:
+      - name: personId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A list of class reservations for the person.
+  /classes/people/{personId}/attendances:
+    get:
+      operationId: listPersonAttendances
+      summary: Retrieve a person's class attendances
+      description: >-
+        Retrieve the list of class attendances (check-ins) for a person. Confirmed
+        endpoint from the public Zen Planner reference.
+      tags:
+      - Classes
+      parameters:
+      - name: personId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A list of class attendances for the person.
+  /locations:
+    get:
+      operationId: listLocations
+      summary: Retrieve locations
+      description: Retrieve a list of locations (studios) for the account.
+      tags:
+      - Locations
+      responses:
+        '200':
+          description: A list of locations.
+  /programs:
+    get:
+      operationId: listPrograms
+      summary: Retrieve programs
+      description: Retrieve information about programs offered by the studio.
+      tags:
+      - Programs
+      responses:
+        '200':
+          description: A list of programs.
+  /prospects:
+    post:
+      operationId: createProspect
+      summary: Create a prospect
+      description: Create a prospect (lead) record in the studio's CRM.
+      tags:
+      - Prospects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: The created prospect.
+  /groups:
+    get:
+      operationId: listGroups
+      summary: Retrieve groups
+      description: >-
+        Retrieve a page of groups and the people associated with them (for
+        example households or family memberships).
+      tags:
+      - Groups
+      responses:
+        '200':
+          description: A list of groups.
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: >-
+        OAuth 2.0 against the Daxko Partners token service. Partner/API access
+        tokens are obtained from https://api.partners.daxko.com/v3/partners/oauth2/token
+        and member tokens from https://operations.oauth2.partners.daxko.com/token.
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.partners.daxko.com/v3/partners/oauth2/token
+          scopes: {}

@@ -1,0 +1,88 @@
+aid: zenplanner
+name: Zen Planner
+review:
+  question: Does Zen Planner expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-04'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Zen Planner's developer API - published on
+    the Daxko Partners platform as the Zen Planner API - is request/response REST
+    over HTTPS, authenticated with OAuth 2.0. No server-push transport (WebSocket
+    or SSE) is documented on the Zen Planner API, so there is no realtime surface
+    to model. The API is also partner-gated, so no live traffic was observed.
+findings:
+  summary: |
+    Zen Planner does not publish a documented public WebSocket API. Zen Planner is
+    gym, martial arts, yoga, and fitness studio management software owned by Daxko.
+    Its developer API is delivered through the shared Daxko Partners platform (base
+    https://api.partners.daxko.com/api/v1) and documented publicly via Daxko's
+    Redocly-hosted reference at https://docs.partners.daxko.com/openapi/ZenPlanner/v1/.
+    The reference describes REST modules for People, Memberships, Classes
+    (schedules, reservations, attendances), Locations, Programs, Prospects, and
+    Groups. All observed operations are request/response REST over HTTPS. No
+    WebSocket (ws:// or wss://) or streaming endpoint is documented anywhere in the
+    Zen Planner API reference as of the review date.
+  accessModel: |
+    The Zen Planner API is partner-gated: access is requested through a Daxko sales
+    representative, then provisioned with OAuth 2.0 credentials. Member-facing
+    authentication uses the OAuth 2.0 Authorization Code flow against
+    https://operations.oauth2.partners.daxko.com/token; partner/server access tokens
+    are obtained from https://api.partners.daxko.com/v3/partners/oauth2/token. The
+    API reference itself is publicly viewable, but calling the API requires a
+    provisioned partner relationship. Endpoints in this entry are induced from the
+    public reference; the Classes paths are confirmed, and the remaining module
+    operations are honestly modeled (endpointsModeled: true).
+  ownership: |
+    Zen Planner is owned by Daxko. Its API is not hosted on a Zen Planner-branded
+    developer portal but on the consolidated Daxko Partners API platform
+    (docs.partners.daxko.com), alongside other Daxko products such as Club
+    Automation, Daxko Operations, GroupEx PRO, MotionSoft, and Spectrum.
+  transports:
+  - protocol: REST
+    scheme: https
+    baseURL: https://api.partners.daxko.com/api/v1
+    documented: true
+    note: Zen Planner API on the Daxko Partners platform. OAuth 2.0. Partner-gated access.
+  - protocol: WebSocket
+    scheme: wss
+    documented: false
+    note: No WebSocket endpoint is documented anywhere in the Zen Planner API reference as of the review date.
+  endpointsModeled: true
+  endpointsConfirmedRest:
+  - GET  https://api.partners.daxko.com/api/v1/classes
+  - GET  https://api.partners.daxko.com/api/v1/classes/people/{personId}/reservations
+  - GET  https://api.partners.daxko.com/api/v1/classes/people/{personId}/attendances
+  endpointsModeledRest:
+  - GET  https://api.partners.daxko.com/api/v1/people
+  - GET  https://api.partners.daxko.com/api/v1/people/{personId}
+  - GET  https://api.partners.daxko.com/api/v1/people/{personId}/memberships
+  - GET  https://api.partners.daxko.com/api/v1/locations
+  - GET  https://api.partners.daxko.com/api/v1/programs
+  - POST https://api.partners.daxko.com/api/v1/prospects
+  - GET  https://api.partners.daxko.com/api/v1/groups
+sources:
+- url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  type: APIReference
+  note: Public Redocly-hosted Zen Planner API reference. Modules - Classes, Locations, Membership, People, Programs, Prospects, Groups.
+- url: https://docs.partners.daxko.com/
+  type: Documentation
+  note: Daxko Partners platform landing page. Access requested via a Daxko sales representative.
+- url: https://api.daxko.com/v3/docs/tutorials/authentication/index.html
+  type: Documentation
+  note: Daxko OAuth 2.0 authentication tutorial (partner and member token flows).
+- url: https://zenplanner.com/
+  type: Website
+  note: Zen Planner product site (a Daxko company).
+- url: https://zenplanner.com/pricing/
+  type: Pricing
+  note: Active-member-based subscription pricing; three editions, ~$99 to ~$348/month.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists. The Zen Planner API is request/response
+    REST on the Daxko Partners platform, authenticated with OAuth 2.0 and gated
+    behind a partner/sales arrangement. No AsyncAPI document was created because
+    there is no server-push transport on the Zen Planner API to model.

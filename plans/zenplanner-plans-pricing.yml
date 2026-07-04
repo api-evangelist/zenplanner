@@ -1,0 +1,129 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Zen Planner
+providerId: zenplanner
+created: '2026-07-04'
+modified: '2026-07-04'
+reconciled: false
+tags:
+- Fitness
+- Gym Management
+- Studio Management
+- Membership
+- Plans
+description: >-
+  Zen Planner (a Daxko product) is priced as a monthly SaaS subscription scaled by
+  the number of active members at a studio, not by staff or prospects. Public and
+  third-party sources describe three editions ranging from roughly $99/month up to
+  about $348/month, with most studios paying between $99 and $200/month depending on
+  active-member count and add-ons. Every tier includes full access to the Studio
+  package feature set (membership management, billing/payments, scheduling,
+  attendance, and the member app); higher tiers cover larger active-member bands.
+  The Zen Planner API is delivered through Daxko Partners and is a separate,
+  sales-gated partner arrangement rather than a self-serve add-on. Exact price bands
+  and API access fees are not reconciled here.
+notes: >-
+  Pricing is active-member-based and quoted by Zen Planner sales; the tier prices
+  below are modeled from public pricing summaries and third-party reviews and should
+  be reconciled against a current quote. API access is requested through a Daxko
+  sales representative.
+sources:
+- https://zenplanner.com/pricing/
+- https://zenplanner.com/blogs/zen-planner-pricing-explained-for-fitness-studios/
+- https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+plans:
+- id: zenplanner-studio-starter
+  name: Studio (Entry Tier)
+  type: subscription
+  description: >-
+    Lowest active-member band. Full Studio package feature set for smaller studios.
+    Prospects and staff accounts are not counted toward the price.
+  entries:
+  - label: Monthly Subscription
+    name: entry_monthly
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: from ~$99/month (lowest active-member band)
+    userMultiplied: false
+  elements:
+  - name: Membership Management
+  - name: Billing and Payments
+  - name: Class and Appointment Scheduling
+  - name: Attendance and Check-ins
+  - name: Member App
+- id: zenplanner-studio-growth
+  name: Studio (Mid Tier)
+  type: subscription
+  description: >-
+    Mid active-member band for growing studios. Same full feature set, priced for a
+    larger roster of active members.
+  entries:
+  - label: Monthly Subscription
+    name: growth_monthly
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: typically ~$130-$200/month depending on active members
+    userMultiplied: false
+  elements:
+  - name: Membership Management
+  - name: Billing and Payments
+  - name: Class and Appointment Scheduling
+  - name: Attendance and Check-ins
+  - name: Member App
+- id: zenplanner-studio-large
+  name: Studio (Top Tier)
+  type: subscription
+  description: >-
+    Highest published active-member band for larger studios and multi-program
+    facilities.
+  entries:
+  - label: Monthly Subscription
+    name: large_monthly
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: up to ~$348/month (largest published active-member band)
+    userMultiplied: false
+  elements:
+  - name: Membership Management
+  - name: Billing and Payments
+  - name: Class and Appointment Scheduling
+  - name: Attendance and Check-ins
+  - name: Member App
+- id: zenplanner-partner-api
+  name: Daxko Partners API Access
+  type: enterprise
+  description: >-
+    Programmatic access to the Zen Planner API on the Daxko Partners platform.
+    Access is requested through a Daxko sales representative and provisioned with
+    OAuth 2.0 client credentials. Not a self-serve add-on; terms are negotiated.
+  entries:
+  - label: Partner Agreement
+    name: partner_api
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact Daxko sales
+    userMultiplied: false
+  elements:
+  - name: OAuth 2.0 Client Credentials
+  - name: People, Memberships, Classes, Locations, Programs, Prospects, Groups APIs
+  - name: Daxko Partners Documentation
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
