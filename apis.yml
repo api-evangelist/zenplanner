@@ -152,6 +152,8 @@ apis:
     Endpoints are modeled from the public Daxko Partners Zen Planner reference; live
     access is partner-gated.
 common:
+- type: DomainSecurity
+  url: security/zenplanner-domain-security.yml
 - type: Authentication
   url: authentication/zenplanner-authentication.yml
 - type: OAuthScopes

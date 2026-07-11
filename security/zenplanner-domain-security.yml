@@ -1,0 +1,36 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: zenplanner.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 22 15:26:41 2026 GMT
+  hsts: false
+- host: docs.partners.daxko.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  1 23:59:59 2026 GMT
+  hsts: false
+- host: api.partners.daxko.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  1 23:59:59 2026 GMT
+  hsts: null
+domains:
+- domain: zenplanner.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: daxko.com
+  dnssec: false
+  caa:
+  - 0 issue "letsencrypt.org"
+  - 0 issue "pki.goog"
+  - 0 issue "amazon.com"
+  - 0 issue "digicert.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
