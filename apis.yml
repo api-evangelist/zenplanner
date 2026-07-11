@@ -152,6 +152,10 @@ apis:
     Endpoints are modeled from the public Daxko Partners Zen Planner reference; live
     access is partner-gated.
 common:
+- type: Authentication
+  url: authentication/zenplanner-authentication.yml
+- type: OAuthScopes
+  url: scopes/zenplanner-scopes.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/zenplanner
 - type: Website
@@ -160,6 +164,8 @@ common:
   url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
 - type: Plans
   url: plans/zenplanner-plans-pricing.yml
+- type: Blog
+  url: https://zenplanner.com/feed/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
