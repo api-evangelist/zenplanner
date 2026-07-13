@@ -1,0 +1,13 @@
+{
+  "repo": "zenplanner",
+  "feeds": [
+    {
+      "source": "https://zenplanner.com/feed/",
+      "feed_url": "https://zenplanner.com/feed/",
+      "title": "Zen Planner",
+      "saved": 6
+    }
+  ],
+  "fetched": "2026-07-11T11:43:46Z",
+  "post_count": 16
+}
