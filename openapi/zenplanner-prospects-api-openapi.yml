@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: Zen Planner Classes Prospects API
+  version: v1
+  description: 'Modeled OpenAPI description of the Zen Planner API, published on the Daxko Partners platform. Zen Planner is gym, martial arts, and fitness studio management software owned by Daxko. The live API is partner-gated - access is requested through a Daxko sales representative - but the API reference is publicly documented at https://docs.partners.daxko.com/openapi/ZenPlanner/v1/.
+
+
+    endpointsModeled: true. The paths below are induced from the public Daxko Partners Zen Planner reference. The Classes paths (/classes, /classes/people/{personId}/reservations, /classes/people/{personId}/attendances) are confirmed from the published documentation; the remaining list/create operations for People, Memberships, Locations, Programs, Prospects, and Groups are honestly modeled from the documented module set and may differ in exact path, parameters, and payloads from the gated production surface.'
+  contact:
+    name: Daxko Partners
+    url: https://docs.partners.daxko.com/
+servers:
+- url: https://api.partners.daxko.com/api/v1
+  description: Daxko Partners production base URL for the Zen Planner API
+security:
+- oauth2: []
+tags:
+- name: Prospects
+paths:
+  /prospects:
+    post:
+      operationId: createProspect
+      summary: Create a prospect
+      description: Create a prospect (lead) record in the studio's CRM.
+      tags:
+      - Prospects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: The created prospect.
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 against the Daxko Partners token service. Partner/API access tokens are obtained from https://api.partners.daxko.com/v3/partners/oauth2/token and member tokens from https://operations.oauth2.partners.daxko.com/token.
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.partners.daxko.com/v3/partners/oauth2/token
+          scopes: {}
