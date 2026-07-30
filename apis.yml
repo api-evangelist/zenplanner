@@ -12,7 +12,20 @@ description: Zen Planner is gym, martial arts, yoga, affiliate, and fitness stud
   People, Memberships, Classes (schedules, reservations, attendances), Locations,
   Programs, Prospects, and Groups, authenticated with OAuth 2.0 against the Daxko
   Partners token service.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zenplanner.png
 tags:
 - Fitness
 - Gym Management
@@ -26,131 +39,104 @@ created: '2026-07-04'
 modified: '2026-07-04'
 specificationVersion: '0.19'
 apis:
-- aid: zenplanner:zenplanner-people-api
-  name: Zen Planner People API
-  tags:
-  - People
-  - Members
-  - Contacts
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-  baseURL: https://api.partners.daxko.com/api/v1
-  properties:
-  - url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-    type: Documentation
-  - url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-    type: APIReference
-  - url: openapi/zenplanner-openapi.yml
-    type: OpenAPI
-  description: Retrieve people (members and contacts) records held in a Zen Planner
-    studio account. Person records are the anchor for memberships, class
-    reservations, and attendance in the rest of the API. Endpoints are modeled from
-    the public Daxko Partners Zen Planner reference; live access is partner-gated.
-- aid: zenplanner:zenplanner-memberships-api
-  name: Zen Planner Memberships API
-  tags:
-  - Memberships
-  - Billing
-  - Subscriptions
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-  baseURL: https://api.partners.daxko.com/api/v1
-  properties:
-  - url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-    type: APIReference
-  - url: openapi/zenplanner-openapi.yml
-    type: OpenAPI
-  description: Access membership information for a person - the plans, agreements, and
-    billing relationships that a member holds at a studio. Endpoints are modeled from
-    the public Daxko Partners Zen Planner reference; live access is partner-gated.
 - aid: zenplanner:zenplanner-classes-api
   name: Zen Planner Classes API
+  description: The Classes API from Zen Planner — 3 operation(s) for classes.
+  humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  baseURL: https://api.partners.daxko.com/api/v1
   tags:
   - Classes
-  - Schedule
-  - Reservations
-  - Attendance
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-  baseURL: https://api.partners.daxko.com/api/v1
   properties:
-  - url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-    type: APIReference
-  - url: openapi/zenplanner-openapi.yml
-    type: OpenAPI
-  description: Retrieve class information including schedules and class types, list a
-    person's class reservations, and list a person's class attendances (check-ins).
-    Confirmed paths include /classes, /classes/people/{personId}/reservations, and
-    /classes/people/{personId}/attendances. Live access is partner-gated.
-- aid: zenplanner:zenplanner-locations-api
-  name: Zen Planner Locations API
-  tags:
-  - Locations
-  - Studios
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-  baseURL: https://api.partners.daxko.com/api/v1
-  properties:
-  - url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-    type: APIReference
-  - url: openapi/zenplanner-openapi.yml
-    type: OpenAPI
-  description: Access information about the physical locations (studios) configured in
-    a Zen Planner account. Endpoints are modeled from the public Daxko Partners Zen
-    Planner reference; live access is partner-gated.
-- aid: zenplanner:zenplanner-programs-api
-  name: Zen Planner Programs API
-  tags:
-  - Programs
-  - Offerings
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-  baseURL: https://api.partners.daxko.com/api/v1
-  properties:
-  - url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-    type: APIReference
-  - url: openapi/zenplanner-openapi.yml
-    type: OpenAPI
-  description: Retrieve information about programs - the offerings (such as memberships,
-    classes, and services) a studio organizes its business around. Endpoints are
-    modeled from the public Daxko Partners Zen Planner reference; live access is
-    partner-gated.
-- aid: zenplanner:zenplanner-prospects-api
-  name: Zen Planner Prospects API
-  tags:
-  - Prospects
-  - Leads
-  - CRM
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-  baseURL: https://api.partners.daxko.com/api/v1
-  properties:
-  - url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-    type: APIReference
-  - url: openapi/zenplanner-openapi.yml
-    type: OpenAPI
-  description: Create prospect (lead) records so external lead-capture and marketing
-    tools can push new prospects into a studio's Zen Planner CRM. Endpoints are
-    modeled from the public Daxko Partners Zen Planner reference; live access is
-    partner-gated.
+  - type: OpenAPI
+    url: openapi/zenplanner-classes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  - type: APIReference
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
 - aid: zenplanner:zenplanner-groups-api
   name: Zen Planner Groups API
-  tags:
-  - Groups
-  - Households
-  - Memberships
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  description: The Groups API from Zen Planner — 1 operation(s) for groups.
   humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
   baseURL: https://api.partners.daxko.com/api/v1
+  tags:
+  - Groups
   properties:
-  - url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
-    type: APIReference
-  - url: openapi/zenplanner-openapi.yml
-    type: OpenAPI
-  description: Access information about groups and the people associated with them -
-    for example households or family memberships that bundle several people together.
-    Endpoints are modeled from the public Daxko Partners Zen Planner reference; live
-    access is partner-gated.
+  - type: OpenAPI
+    url: openapi/zenplanner-groups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  - type: APIReference
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+- aid: zenplanner:zenplanner-locations-api
+  name: Zen Planner Locations API
+  description: The Locations API from Zen Planner — 1 operation(s) for locations.
+  humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  baseURL: https://api.partners.daxko.com/api/v1
+  tags:
+  - Locations
+  properties:
+  - type: OpenAPI
+    url: openapi/zenplanner-locations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  - type: APIReference
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+- aid: zenplanner:zenplanner-memberships-api
+  name: Zen Planner Memberships API
+  description: The Memberships API from Zen Planner — 1 operation(s) for memberships.
+  humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  baseURL: https://api.partners.daxko.com/api/v1
+  tags:
+  - Memberships
+  properties:
+  - type: OpenAPI
+    url: openapi/zenplanner-memberships-api-openapi.yml
+  - type: Documentation
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  - type: APIReference
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+- aid: zenplanner:zenplanner-people-api
+  name: Zen Planner People API
+  description: The People API from Zen Planner — 2 operation(s) for people.
+  humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  baseURL: https://api.partners.daxko.com/api/v1
+  tags:
+  - People
+  properties:
+  - type: OpenAPI
+    url: openapi/zenplanner-people-api-openapi.yml
+  - type: Documentation
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  - type: APIReference
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+- aid: zenplanner:zenplanner-programs-api
+  name: Zen Planner Programs API
+  description: The Programs API from Zen Planner — 1 operation(s) for programs.
+  humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  baseURL: https://api.partners.daxko.com/api/v1
+  tags:
+  - Programs
+  properties:
+  - type: OpenAPI
+    url: openapi/zenplanner-programs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  - type: APIReference
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+- aid: zenplanner:zenplanner-prospects-api
+  name: Zen Planner Prospects API
+  description: The Prospects API from Zen Planner — 1 operation(s) for prospects.
+  humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  baseURL: https://api.partners.daxko.com/api/v1
+  tags:
+  - Prospects
+  properties:
+  - type: OpenAPI
+    url: openapi/zenplanner-prospects-api-openapi.yml
+  - type: Documentation
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
+  - type: APIReference
+    url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
 common:
 - type: AgenticAccess
   url: agentic-access/zenplanner-agentic-access.yml
