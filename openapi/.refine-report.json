@@ -1,0 +1,26 @@
+{
+  "provider": "zenplanner",
+  "sources": [
+    "zenplanner-classes-api-openapi.yml",
+    "zenplanner-groups-api-openapi.yml",
+    "zenplanner-locations-api-openapi.yml",
+    "zenplanner-memberships-api-openapi.yml",
+    "zenplanner-people-api-openapi.yml",
+    "zenplanner-programs-api-openapi.yml",
+    "zenplanner-prospects-api-openapi.yml"
+  ],
+  "outputs": [
+    "zenplanner-classes-api-openapi.yml",
+    "zenplanner-groups-api-openapi.yml",
+    "zenplanner-locations-api-openapi.yml",
+    "zenplanner-memberships-api-openapi.yml",
+    "zenplanner-people-api-openapi.yml",
+    "zenplanner-programs-api-openapi.yml",
+    "zenplanner-prospects-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
