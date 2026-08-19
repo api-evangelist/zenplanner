@@ -1,0 +1,293 @@
+{
+  "item": [
+    {
+      "id": "f66c4268-96f4-477f-b433-de0d17ef6e54",
+      "name": "Classes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "72d23d78-9411-43d5-bddc-a38dc0bf93c9",
+          "name": "Retrieve classes",
+          "request": {
+            "name": "Retrieve classes",
+            "description": {
+              "content": "Retrieve class information including schedules and details about class types. Confirmed endpoint from the public Zen Planner reference.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "classes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "34bf5aed-2cb7-4bdd-b763-a415a02dd720",
+              "name": "A list of classes.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "classes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae4f9610-cc2f-4ae7-833c-00eef8f506a8",
+          "name": "Retrieve a person's class reservations",
+          "request": {
+            "name": "Retrieve a person's class reservations",
+            "description": {
+              "content": "Retrieve the list of reserved classes for a person. Confirmed endpoint from the public Zen Planner reference.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "classes",
+                "people",
+                ":personId",
+                "reservations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "personId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90559be6-d5fd-43c6-8f6c-4b43cb61db7c",
+              "name": "A list of class reservations for the person.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "classes",
+                    "people",
+                    ":personId",
+                    "reservations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "personId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78198582-e4d2-4930-a213-75e1a217a638",
+          "name": "Retrieve a person's class attendances",
+          "request": {
+            "name": "Retrieve a person's class attendances",
+            "description": {
+              "content": "Retrieve the list of class attendances (check-ins) for a person. Confirmed endpoint from the public Zen Planner reference.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "classes",
+                "people",
+                ":personId",
+                "attendances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "personId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4248e1dc-6833-48f9-94d3-d7fb5813375c",
+              "name": "A list of class attendances for the person.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "classes",
+                    "people",
+                    ":personId",
+                    "attendances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "personId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.partners.daxko.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.partners.daxko.com/v3/partners/oauth2/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "62286312-681b-4646-a836-c44d08e93c09",
+    "name": "Zen Planner Classes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Modeled OpenAPI description of the Zen Planner API, published on the Daxko Partners platform. Zen Planner is gym, martial arts, and fitness studio management software owned by Daxko. The live API is partner-gated - access is requested through a Daxko sales representative - but the API reference is publicly documented at https://docs.partners.daxko.com/openapi/ZenPlanner/v1/.\n\nendpointsModeled: true. The paths below are induced from the public Daxko Partners Zen Planner reference. The Classes paths (/classes, /classes/people/{personId}/reservations, /classes/people/{personId}/attendances) are confirmed from the published documentation; the remaining list/create operations for People, Memberships, Locations, Programs, Prospects, and Groups are honestly modeled from the documented module set and may differ in exact path, parameters, and payloads from the gated production surface.\n\nContact Support:\n Name: Daxko Partners",
+      "type": "text/plain"
+    }
+  }
+}

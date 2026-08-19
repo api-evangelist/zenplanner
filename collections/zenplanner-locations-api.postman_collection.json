@@ -1,0 +1,113 @@
+{
+  "item": [
+    {
+      "id": "20d3fa15-cde4-4361-8726-5aa5535d3450",
+      "name": "Locations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "24c6d1a9-cfaf-4ae8-a6a0-c119cac0d864",
+          "name": "Retrieve locations",
+          "request": {
+            "name": "Retrieve locations",
+            "description": {
+              "content": "Retrieve a list of locations (studios) for the account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2ed1e213-a109-4ffd-b4ff-51c387e80d58",
+              "name": "A list of locations.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.partners.daxko.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.partners.daxko.com/v3/partners/oauth2/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6eb418a2-82bc-4cb6-810d-9e7e33a3ecf5",
+    "name": "Zen Planner Classes Locations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Modeled OpenAPI description of the Zen Planner API, published on the Daxko Partners platform. Zen Planner is gym, martial arts, and fitness studio management software owned by Daxko. The live API is partner-gated - access is requested through a Daxko sales representative - but the API reference is publicly documented at https://docs.partners.daxko.com/openapi/ZenPlanner/v1/.\n\nendpointsModeled: true. The paths below are induced from the public Daxko Partners Zen Planner reference. The Classes paths (/classes, /classes/people/{personId}/reservations, /classes/people/{personId}/attendances) are confirmed from the published documentation; the remaining list/create operations for People, Memberships, Locations, Programs, Prospects, and Groups are honestly modeled from the documented module set and may differ in exact path, parameters, and payloads from the gated production surface.\n\nContact Support:\n Name: Daxko Partners",
+      "type": "text/plain"
+    }
+  }
+}

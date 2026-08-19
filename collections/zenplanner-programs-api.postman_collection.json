@@ -1,0 +1,113 @@
+{
+  "item": [
+    {
+      "id": "0417b287-7b9b-40cd-ad6c-6e1578286dc0",
+      "name": "Programs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0c4437b2-501d-4433-a62d-e0d8e825760c",
+          "name": "Retrieve programs",
+          "request": {
+            "name": "Retrieve programs",
+            "description": {
+              "content": "Retrieve information about programs offered by the studio.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "programs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a0cae12d-a6c9-460f-a3e3-a6d36fe88e1a",
+              "name": "A list of programs.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "programs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.partners.daxko.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.partners.daxko.com/v3/partners/oauth2/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b69eb07f-755e-48cb-b0c9-a309277d2f35",
+    "name": "Zen Planner Classes Programs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Modeled OpenAPI description of the Zen Planner API, published on the Daxko Partners platform. Zen Planner is gym, martial arts, and fitness studio management software owned by Daxko. The live API is partner-gated - access is requested through a Daxko sales representative - but the API reference is publicly documented at https://docs.partners.daxko.com/openapi/ZenPlanner/v1/.\n\nendpointsModeled: true. The paths below are induced from the public Daxko Partners Zen Planner reference. The Classes paths (/classes, /classes/people/{personId}/reservations, /classes/people/{personId}/attendances) are confirmed from the published documentation; the remaining list/create operations for People, Memberships, Locations, Programs, Prospects, and Groups are honestly modeled from the documented module set and may differ in exact path, parameters, and payloads from the gated production surface.\n\nContact Support:\n Name: Daxko Partners",
+      "type": "text/plain"
+    }
+  }
+}

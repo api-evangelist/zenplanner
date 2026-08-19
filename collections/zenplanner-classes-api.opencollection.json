@@ -1,0 +1,76 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zen Planner Classes API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.partners.daxko.com/v3/partners/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Classes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve classes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partners.daxko.com/api/v1/classes"
+          },
+          "docs": "Retrieve class information including schedules and details about class types. Confirmed endpoint from the public Zen Planner reference."
+        },
+        {
+          "info": {
+            "name": "Retrieve a person's class reservations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partners.daxko.com/api/v1/classes/people/:personId/reservations",
+            "params": [
+              {
+                "name": "personId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the list of reserved classes for a person. Confirmed endpoint from the public Zen Planner reference."
+        },
+        {
+          "info": {
+            "name": "Retrieve a person's class attendances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partners.daxko.com/api/v1/classes/people/:personId/attendances",
+            "params": [
+              {
+                "name": "personId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the list of class attendances (check-ins) for a person. Confirmed endpoint from the public Zen Planner reference."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

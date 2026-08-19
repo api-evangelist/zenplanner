@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zen Planner Classes Programs API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.partners.daxko.com/v3/partners/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Programs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve programs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partners.daxko.com/api/v1/programs"
+          },
+          "docs": "Retrieve information about programs offered by the studio."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

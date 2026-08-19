@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zen Planner Classes Prospects API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.partners.daxko.com/v3/partners/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Prospects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a prospect",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partners.daxko.com/api/v1/prospects",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a prospect (lead) record in the studio's CRM."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
