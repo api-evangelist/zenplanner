@@ -59,6 +59,8 @@ apis:
   humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
   baseURL: https://api.partners.daxko.com/api/v1
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
