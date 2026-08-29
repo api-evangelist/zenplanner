@@ -12,6 +12,18 @@ description: Zen Planner is gym, martial arts, yoga, affiliate, and fitness stud
   People, Memberships, Classes (schedules, reservations, attendances), Locations,
   Programs, Prospects, and Groups, authenticated with OAuth 2.0 against the Daxko
   Partners token service.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
