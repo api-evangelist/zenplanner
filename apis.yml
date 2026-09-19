@@ -87,6 +87,8 @@ apis:
   humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
   baseURL: https://api.partners.daxko.com/api/v1
   tags:
+  - Location
+  tags_raw:
   - Locations
   properties:
   - type: OpenAPI
@@ -101,6 +103,8 @@ apis:
   humanURL: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
   baseURL: https://api.partners.daxko.com/api/v1
   tags:
+  - Membership
+  tags_raw:
   - Memberships
   properties:
   - type: OpenAPI
