@@ -1,11 +1,8 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Zen Planner Classes Locations API
+  title: Zen Planner Locations API
   version: v1
-  description: 'Modeled OpenAPI description of the Zen Planner API, published on the Daxko Partners platform. Zen Planner is gym, martial arts, and fitness studio management software owned by Daxko. The live API is partner-gated - access is requested through a Daxko sales representative - but the API reference is publicly documented at https://docs.partners.daxko.com/openapi/ZenPlanner/v1/.
-
-
-    endpointsModeled: true. The paths below are induced from the public Daxko Partners Zen Planner reference. The Classes paths (/classes, /classes/people/{personId}/reservations, /classes/people/{personId}/attendances) are confirmed from the published documentation; the remaining list/create operations for People, Memberships, Locations, Programs, Prospects, and Groups are honestly modeled from the documented module set and may differ in exact path, parameters, and payloads from the gated production surface.'
+  description: Modeled OpenAPI description of the Zen Planner API, published on the Daxko Partners platform.
   contact:
     name: Daxko Partners
     url: https://docs.partners.daxko.com/
