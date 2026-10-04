@@ -156,6 +156,9 @@ apis:
   - type: APIReference
     url: https://docs.partners.daxko.com/openapi/ZenPlanner/v1/
 common:
+- type: CapabilityMap
+  url: capabilities/zenplanner-capability-edges.yml
+  name: Zen Planner Business Capability Map
 - type: AgenticAccess
   url: agentic-access/zenplanner-agentic-access.yml
 - type: DomainSecurity
