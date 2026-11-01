@@ -1,4 +1,4 @@
-# Zen Planner (zenplanner)
+# Zen Planner
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,96 +64,122 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Zen Planner is gym, martial arts, yoga, affiliate, and fitness studio management software covering membership management, billing and payments, class scheduling, attendance and check-ins, skills/belt tracking, and a member app. **Zen Planner is owned by Daxko.** Its developer API is published on the shared **Daxko Partners** API platform as the "Zen Planner API."
+Zen Planner is gym, martial arts, yoga, affiliate, and fitness studio management software covering membership management, billing and payments, class scheduling, attendance and check-ins, skills and belt tracking, and a member app. Zen Planner is owned by Daxko, and its developer API is published on the shared Daxko Partners platform as the Zen Planner API. The API is partner-gated - access is requested through a Daxko sales representative - but the API reference is publicly documented via Daxko's Redocly-hosted docs. It exposes REST endpoints for People, Memberships, Classes (schedules, reservations, attendances), Locations, Programs, Prospects, and Groups, authenticated with OAuth 2.0 against the Daxko Partners token service.
 
-**Access model:** The Zen Planner API is **partner-gated** - you request access through a Daxko sales representative and are provisioned OAuth 2.0 credentials. The API *reference* is publicly viewable (Daxko's Redocly-hosted docs), but calling the API requires a provisioned partner relationship, so live traffic was not exercised for this entry. The Classes endpoints are confirmed from the public reference; the remaining module operations are honestly modeled from the documented module set (`endpointsModeled: true`) and may differ in exact path, parameters, and payloads from the gated production surface.
+**Areas:** Fitness · Gym Management · Studio Management · Martial Arts · Membership · Scheduling · Class Booking · Daxko
 
-**Base URL:** `https://api.partners.daxko.com/api/v1`
-**Authentication:** OAuth 2.0 (partner tokens via `https://api.partners.daxko.com/v3/partners/oauth2/token`; member auth via `https://operations.oauth2.partners.daxko.com/token`)
+## Zen Planner on APIs.io
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/zenplanner/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/zenplanner/refs/heads/main/apis.yml)
+Everything profiled for Zen Planner is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/zenplanner/](https://apis.io/providers/zenplanner/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (7)
 
-- Fitness
-- Gym Management
-- Studio Management
-- Martial Arts
-- Membership
-- Scheduling
-- Class Booking
-- Daxko
+- [Zen Planner Classes API](https://apis.io/apis/zenplanner/zenplanner-classes-api/) — The Classes API from Zen Planner — 3 operation(s) for classes.
+- [Zen Planner Groups API](https://apis.io/apis/zenplanner/zenplanner-groups-api/) — The Groups API from Zen Planner — 1 operation(s) for groups.
+- [Zen Planner Locations API](https://apis.io/apis/zenplanner/zenplanner-locations-api/) — The Locations API from Zen Planner — 1 operation(s) for locations.
+- [Zen Planner Memberships API](https://apis.io/apis/zenplanner/zenplanner-memberships-api/) — The Memberships API from Zen Planner — 1 operation(s) for memberships.
+- [Zen Planner People API](https://apis.io/apis/zenplanner/zenplanner-people-api/) — The People API from Zen Planner — 2 operation(s) for people.
+- [Zen Planner Programs API](https://apis.io/apis/zenplanner/zenplanner-programs-api/) — The Programs API from Zen Planner — 1 operation(s) for programs.
+- [Zen Planner Prospects API](https://apis.io/apis/zenplanner/zenplanner-prospects-api/) — The Prospects API from Zen Planner — 1 operation(s) for prospects.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-07-04
-- **Modified:** 2026-07-04
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-All APIs share the base URL `https://api.partners.daxko.com/api/v1` and are documented at the public Daxko Partners reference: [https://docs.partners.daxko.com/openapi/ZenPlanner/v1/](https://docs.partners.daxko.com/openapi/ZenPlanner/v1/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-### Zen Planner People API
+- [Zenplanner Agentic Access](https://apis.io/agentic-access/zenplanner/zenplanner-agentic-access/)
 
-Retrieve people (members and contacts) records held in a Zen Planner studio account. Person records are the anchor for memberships, class reservations, and attendance in the rest of the API.
+#### Collections (7)
 
-- **Tags:** People, Members, Contacts
-- **Properties:** [Documentation](https://docs.partners.daxko.com/openapi/ZenPlanner/v1/), [API Reference](https://docs.partners.daxko.com/openapi/ZenPlanner/v1/), [OpenAPI](openapi/zenplanner-openapi.yml)
+Postman and Open Collection request collections.
 
-### Zen Planner Memberships API
+- [Zen Planner Classes API](https://apis.io/collections/zenplanner/open-zenplanner-classes-api/)
+- [Zen Planner Classes Groups API](https://apis.io/collections/zenplanner/open-zenplanner-groups-api/)
+- [Zen Planner Classes Locations API](https://apis.io/collections/zenplanner/open-zenplanner-locations-api/)
+- [Zen Planner Classes Memberships API](https://apis.io/collections/zenplanner/open-zenplanner-memberships-api/)
+- [Zen Planner Classes People API](https://apis.io/collections/zenplanner/open-zenplanner-people-api/)
+- [Zen Planner Classes Programs API](https://apis.io/collections/zenplanner/open-zenplanner-programs-api/)
+- [Zen Planner Classes Prospects API](https://apis.io/collections/zenplanner/open-zenplanner-prospects-api/)
 
-Access membership information for a person - the plans, agreements, and billing relationships that a member holds at a studio.
+#### Security (2)
 
-- **Tags:** Memberships, Billing, Subscriptions
-- **Properties:** [API Reference](https://docs.partners.daxko.com/openapi/ZenPlanner/v1/), [OpenAPI](openapi/zenplanner-openapi.yml)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Zen Planner Classes API
+- [Zenplanner Authentication](https://apis.io/security/zenplanner/zenplanner-authentication/)
+- [Zenplanner Domain Security](https://apis.io/security/zenplanner/zenplanner-domain-security/)
 
-Retrieve class information including schedules and class types, list a person's class reservations, and list a person's class attendances (check-ins). Confirmed paths: `/classes`, `/classes/people/{personId}/reservations`, `/classes/people/{personId}/attendances`.
+#### OAuth scopes (1)
 
-- **Tags:** Classes, Schedule, Reservations, Attendance
-- **Properties:** [API Reference](https://docs.partners.daxko.com/openapi/ZenPlanner/v1/), [OpenAPI](openapi/zenplanner-openapi.yml)
+The permissions the API asks for.
 
-### Zen Planner Locations API
+- [Zenplanner Scopes](https://apis.io/scopes/zenplanner/zenplanner-scopes/)
 
-Access information about the physical locations (studios) configured in a Zen Planner account.
+#### Plans and pricing (1)
 
-- **Tags:** Locations, Studios
-- **Properties:** [API Reference](https://docs.partners.daxko.com/openapi/ZenPlanner/v1/), [OpenAPI](openapi/zenplanner-openapi.yml)
+Published plans, tiers and prices.
 
-### Zen Planner Programs API
+- [Zenplanner Plans Pricing](https://apis.io/plans/zenplanner/zenplanner-plans-pricing/)
 
-Retrieve information about programs - the offerings (memberships, classes, services) a studio organizes its business around.
+## Where to find this API
 
-- **Tags:** Programs, Offerings
-- **Properties:** [API Reference](https://docs.partners.daxko.com/openapi/ZenPlanner/v1/), [OpenAPI](openapi/zenplanner-openapi.yml)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### Zen Planner Prospects API
-
-Create prospect (lead) records so external lead-capture and marketing tools can push new prospects into a studio's Zen Planner CRM.
-
-- **Tags:** Prospects, Leads, CRM
-- **Properties:** [API Reference](https://docs.partners.daxko.com/openapi/ZenPlanner/v1/), [OpenAPI](openapi/zenplanner-openapi.yml)
-
-### Zen Planner Groups API
-
-Access information about groups and the people associated with them - for example households or family memberships.
-
-- **Tags:** Groups, Households, Memberships
-- **Properties:** [API Reference](https://docs.partners.daxko.com/openapi/ZenPlanner/v1/), [OpenAPI](openapi/zenplanner-openapi.yml)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/zenplanner)
 - [Website](https://zenplanner.com/)
 - [Documentation](https://docs.partners.daxko.com/openapi/ZenPlanner/v1/)
-- [Plans](plans/zenplanner-plans-pricing.yml)
+- [Blog](https://zenplanner.com/feed/)
 
-## Pricing
+## API Evangelist rating
 
-Zen Planner is priced as a monthly SaaS subscription scaled by **active members** (not staff or prospects). Public and third-party sources describe three editions from roughly **$99/month to ~$348/month**, with most studios paying $99-$200/month. See [plans/zenplanner-plans-pricing.yml](plans/zenplanner-plans-pricing.yml). API access is a separate, sales-gated Daxko Partners arrangement.
+**Kin Score 22.6** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 45.3 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 14.3 |
+| Access clarity | 7.9 |
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Agent readiness 20.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/zenplanner/](https://apis.io/providers/zenplanner/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Zen Planner: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/zenplanner/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
